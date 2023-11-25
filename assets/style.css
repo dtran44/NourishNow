@@ -1,0 +1,49 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #FBFCFE;
+    height: 100vh;
+}  
+
+/* Style weekday with font and display */
+.weekday {
+    font-weight: bold;
+    padding: 20px;
+    font-size: 200%;
+    display: flex;
+    justify-content: center;
+  }
+
+  h3 {
+    font-weight: bold;
+    padding: 20px;
+    font-size: 200%;
+    display: flex;
+    justify-content: center;
+  }
+  .breakfast {
+    font-weight: bold;
+    padding: 20px;
+    font-size: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .lunch {
+    font-weight: bold;
+    padding: 20px;
+    font-size: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .dinner {
+    font-weight: bold;
+    padding: 20px;
+    font-size: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  img.meal-image {
+ width: 80%; 
+ height: 40%; 
+}
