@@ -1,10 +1,9 @@
 var day = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 var breakfastCategory = 'Breakfast';
-var userCategory = 'Vegan';
+var userCategory = 'Chicken';
 
 
 document.addEventListener('DOMContentLoaded', function() {
-        
     function addMealToMenu(day, mealType, meal) {
         var mealName = meal.strMeal;
         var mealThumbnail = meal.strMealThumb;
@@ -34,15 +33,37 @@ document.addEventListener('DOMContentLoaded', function() {
         var mealTitle = document.createElement('h6');
         mealTitle.textContent = mealName;
 
+        var mealInstructionsEl = document.createElement('p');
+        mealInstructionsEl.textContent = mealInstructions;
+        mealInstructionsEl.style.display = 'none';
+
         var mealIngredientsEl = document.createElement('ul');
         ingredients.forEach(ingredient => {
             var li = document.createElement('li');
             li.textContent = ingredient;
             mealIngredientsEl.appendChild(li);
+        });
+        mealIngredientsEl.style.display = 'none';
 
-        var mealInstructionsEl = document.createElement('p');
-        mealInstructionsEl.textContent = mealInstructions;
-      
+        // Function to toggle display on click
+        var mealInstructionsDiv = document.getElementById("mealInstructions");
+        var mealIngredientsDiv = document.getElementById("mealIngredients");
+
+        function toggleDisplay(element) {
+            if (element.style.display === 'none') {
+                mealInstructionsDiv.textContent = mealInstructions;
+                mealIngredientsDiv.textContent = ingredients;
+            } else {
+                element.style.display = 'none';
+            }
+        }
+
+        // Add click event listener to the meal image for toggling display
+        mealImage.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent event bubbling
+
+            toggleDisplay(mealIngredientsEl);
+            toggleDisplay(mealInstructionsEl);
         });
 
         // Append elements to the specified menu based on the day and meal type
@@ -56,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
             menu.appendChild(mealContainer);
         }
     }
+       
 
     // Function to fetch meal details by category
 function getMealDetailsByCategory(category) {
@@ -109,7 +131,10 @@ function getMealDetailsByCategory(category) {
             console.error('Error fetching meal details:', error);
             return null;
         });
+
+ 
 }
+
     // Function to fetch a meal for a specific day and meal type
     function fetchAndDisplayMeal(day, mealType, category) {
         getMealDetailsByCategory(category)
@@ -124,8 +149,12 @@ function getMealDetailsByCategory(category) {
                 console.error('Error fetching meal:', error);
             });
     
+    
+    
+    
         }
 
+   
     day.forEach(day => {
         fetchAndDisplayMeal(day, 'Lunch', userCategory);
         fetchAndDisplayMeal(day, 'Dinner', userCategory);
