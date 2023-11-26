@@ -191,49 +191,49 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add click event listener to save menuplan into local storage
     document.getElementById('saveBtn').addEventListener('click', function() {
+        // Save the entire menu plan to local storage
         localStorage.setItem('mealPlanSaved', JSON.stringify(menuPlan));
-    // Call the function to create a shopping list from the saved meal plan
-    createShoppingListFromMealPlan();}
- ) })
-    // Function to create a shopping list from the saved meal plan
     
-    function createShoppingListFromMealPlan() {
-        // Retrieve the saved meal plan from local storage
-        var savedMealPlan = JSON.parse(localStorage.getItem('mealPlanSaved'));
+        // Extract ingredients from the menuPlan
+        var ingredientsList = [];
+        menuPlan.forEach(meal => {
+            ingredientsList.push(...meal.ingredients);
+        });
     
-        if (savedMealPlan && savedMealPlan.length > 0) {
-            var shoppingList = {};
+        // Save ingredients to localStorage separately
+        localStorage.setItem('ingredients', JSON.stringify(ingredientsList));
     
-            // Loop through the saved meal plan
-            savedMealPlan.forEach(meal => {
-                // Extract ingredients from each meal
-                var ingredients = meal.ingredients;
-    
-                // Add ingredients to the shopping list while removing duplicates
-                ingredients.forEach(ingredient => {
-                    if (!shoppingList[ingredient]) {
-                        shoppingList[ingredient] = 1; // Initialize count for new ingredient
-                    } else {
-                        shoppingList[ingredient] += 1; // Increment count for existing ingredient
-                    }
-                });
-            });
-    
-            // Display the consolidated shopping list
-            var formattedShoppingList = 'Shopping List:\n';
-            for (const ingredient in shoppingList) {
-                if (Object.hasOwnProperty.call(shoppingList, ingredient)) {
-                    formattedShoppingList += `${ingredient} - Quantity: ${shoppingList[ingredient]}\n`;
-                }
-            }
-    
-            var shoppingListCart = document.getElementById('list');
-            shoppingListCart.textContent = formattedShoppingList;
-        }
-    }
-        
-    
+           // Display ingredients in the shopping list
+           displayIngredients();
+    });
 
+ // Function to display the list of ingredients from local storage
+ function displayIngredients() {
+    var ingredientsList = JSON.parse(localStorage.getItem('ingredients'));
+
+    // Get the div where you want to display the list
+    var ingredientsDiv = document.getElementById('list');
+
+    if (ingredientsList && ingredientsList.length > 0) {
+        // Create an unordered list element
+        var ul = document.createElement('ul');
+
+        // Loop through the ingredients and create list items
+        ingredientsList.forEach(ingredient => {
+            var li = document.createElement('li');
+            li.textContent = ingredient;
+            ul.appendChild(li); // Append each list item to the unordered list
+        });
+
+        // Append the unordered list to the div
+        ingredientsDiv.appendChild(ul);
+    } else {
+        // If no ingredients are found, display a message
+        ingredientsDiv.textContent = 'No ingredients found.';
+    }
+}
+      
+})
 
 
 
