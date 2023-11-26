@@ -1,17 +1,17 @@
 var day = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 var breakfastCategory = 'Breakfast';
 var userCategory = 'Chicken';
-
+var menuPlan = [];
 
 document.addEventListener('DOMContentLoaded', function() {
-    function addMealToMenu(day, mealType, meal) {
+    function generateMealPlan(day, mealType, meal) {
         var mealName = meal.strMeal;
         var mealThumbnail = meal.strMealThumb;
         var mealInstructions = meal.strInstructions;
         var ingredients = [];
 
         // Collect ingredients and measurements from the meal object
-        for (var i = 1; i <= 20; i++) {
+        for (var i = 1; i <= 50; i++) {
             var ingredient = meal['strIngredient' + i];
             var measurement = meal['strMeasure' + i];
             if (ingredient && ingredient.trim() !== '') {
@@ -20,6 +20,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             }
         }
+
+        // Create a meal object containing details
+        var mealObject = {
+            day: day,
+            mealtype: mealType,
+            name: mealName,
+            ingredients: ingredients,
+            instructions: mealInstructions
+        };
+
+        // Add the meal object to the menuPlan array
+        menuPlan.push(mealObject);
 
         // Create HTML elements to display meal details
         var mealContainer = document.createElement('div');
@@ -46,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
         mealIngredientsEl.style.display = 'none';
 
         // Function to toggle display on click
-        var mealInstructionsDiv = document.getElementById("mealInstructions");
-        var mealIngredientsDiv = document.getElementById("mealIngredients");
+        var mealInstructionsDiv = document.getElementById('mealInstructions');
+        var mealIngredientsDiv = document.getElementById('mealIngredients');
 
         function toggleDisplay(element) {
             if (element.style.display === 'none') {
@@ -77,70 +89,67 @@ document.addEventListener('DOMContentLoaded', function() {
             menu.appendChild(mealContainer);
         }
     }
-       
 
     // Function to fetch meal details by category
-function getMealDetailsByCategory(category) {
-    let apiUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
+    function getMealDetailsByCategory(category) {
+        let apiUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
 
-    return fetch(apiUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Network response was not ok: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.meals && data.meals.length > 0) {
-                // Select a random meal from the fetched list
-                const randomIndex = Math.floor(Math.random() * data.meals.length);
-                const randomMeal = data.meals[randomIndex]; // Get a random meal
+        return fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.meals && data.meals.length > 0) {
+                    // Select a random meal from the fetched list
+                    const randomIndex = Math.floor(Math.random() * data.meals.length);
+                    const randomMeal = data.meals[randomIndex]; // Get a random meal
 
-                // Extract the meal ID of the random meal
-                const mealId = randomMeal.idMeal;
-                return mealId;
-            } else {
-                return null; // Return null if no meals found
-            }
-        })
-        .then(mealId => {
-            if (mealId) {
-                // Fetch meal details by ID
-                let mealDetailsUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
-                return fetch(mealDetailsUrl)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`Network response was not ok: ${response.status}`);
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        if (data.meals && data.meals.length > 0) {
-                            // Return the details of the meal
-                            const mealDetails = data.meals[0];
-                            return mealDetails;
-                        } else {
-                            return null; // Return null if no meal details found
-                        }
-                    });
-            } else {
-                return null; // Return null if no meal ID available
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching meal details:', error);
-            return null;
-        });
-
- 
-}
+                    // Extract the meal ID of the random meal
+                    const mealId = randomMeal.idMeal;
+                    return mealId;
+                } else {
+                    return null; // Return null if no meals found
+                }
+            })
+            .then(mealId => {
+                if (mealId) {
+                    // Fetch meal details by ID
+                    let mealDetailsUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
+                    return fetch(mealDetailsUrl)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`Network response was not ok: ${response.status}`);
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (data.meals && data.meals.length > 0) {
+                                // Return the details of the meal
+                                const mealDetails = data.meals[0];
+                                return mealDetails;
+                            } else {
+                                return null; // Return null if no meal details found
+                            }
+                        });
+                } else {
+                    return null; // Return null if no meal ID available
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching meal details:', error);
+                return null;
+            });
+    }
 
     // Function to fetch a meal for a specific day and meal type
     function fetchAndDisplayMeal(day, mealType, category) {
         getMealDetailsByCategory(category)
             .then(randomMeal => {
                 if (randomMeal) {
-                    addMealToMenu(day, mealType, randomMeal);
+                    generateMealPlan(day, mealType, randomMeal);
                 } else {
                     console.log(`No ${mealType.toLowerCase()} found for ${day}`);
                 }
@@ -148,16 +157,39 @@ function getMealDetailsByCategory(category) {
             .catch(error => {
                 console.error('Error fetching meal:', error);
             });
-    
-    
-    
-    
-        }
+    }
 
-   
-    day.forEach(day => {
-        fetchAndDisplayMeal(day, 'Lunch', userCategory);
-        fetchAndDisplayMeal(day, 'Dinner', userCategory);
-        fetchAndDisplayMeal(day, 'Breakfast', breakfastCategory);
+    function clearMealPlan() {
+        day.forEach(day => {
+            ['Breakfast', 'Lunch', 'Dinner'].forEach(mealType => {
+                const menuId = `${day.toLowerCase()}-${mealType.toLowerCase()}`;
+                const menu = document.getElementById(menuId);
+                if (menu) {
+                    menu.innerHTML = ''; // Clear the content of the menu container
+                }
+            });
+        });
+    }
+
+    function fetchNewMealPlan() {
+        menuPlan = [];
+        clearMealPlan();
+        day.forEach(day => {
+            fetchAndDisplayMeal(day, 'Lunch', userCategory);
+            fetchAndDisplayMeal(day, 'Dinner', userCategory);
+            fetchAndDisplayMeal(day, 'Breakfast', breakfastCategory);
+        });
+    }
+
+    fetchNewMealPlan();
+
+    // Add click event listener to save menuplan into local storage
+    document.getElementById('saveBtn').addEventListener('click', function() {
+        localStorage.setItem('mealPlanSaved', JSON.stringify(menuPlan));
+    });
+
+    // Add click event listener to generate a new meal plan
+    document.getElementById('regenBtn').addEventListener('click', function() {
+        fetchNewMealPlan();
     });
 });
