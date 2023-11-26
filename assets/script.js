@@ -3,19 +3,25 @@ var breakfastCategory = 'Breakfast';
 var userCategory = 'Chicken';
 var menuPlan = [];
 
+
 document.addEventListener('DOMContentLoaded', function() {
     function generateMealPlan(day, mealType, meal) {
         var mealName = meal.strMeal;
         var mealThumbnail = meal.strMealThumb;
         var mealInstructions = meal.strInstructions;
-        var ingredients = [];
+        var ingredientsList = [];
 
         // Collect ingredients and measurements from the meal object
         for (var i = 1; i <= 50; i++) {
             var ingredient = meal['strIngredient' + i];
             var measurement = meal['strMeasure' + i];
             if (ingredient && ingredient.trim() !== '') {
-                ingredients.push(`${ingredient} - ${measurement}`);
+                // Store each ingredient with its measurement in an object
+                var ingredientObject = {
+                    name: ingredient,
+                    measurement: measurement
+                };
+                ingredientsList.push(ingredientObject);
             } else {
                 break;
             }
@@ -26,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             day: day,
             mealtype: mealType,
             name: mealName,
-            ingredients: ingredients,
+            ingredients: ingredientsList,
             instructions: mealInstructions
         };
 
@@ -50,10 +56,10 @@ document.addEventListener('DOMContentLoaded', function() {
         mealInstructionsEl.style.display = 'none';
 
         var mealIngredientsEl = document.createElement('ul');
-        ingredients.forEach(ingredient => {
-            var li = document.createElement('li');
-            li.textContent = ingredient;
-            mealIngredientsEl.appendChild(li);
+        ingredientsList.forEach(ingredient => {
+        var li = document.createElement('li');
+        li.textContent = ingredient.name;
+         mealIngredientsEl.appendChild(li);
         });
         mealIngredientsEl.style.display = 'none';
 
@@ -61,20 +67,25 @@ document.addEventListener('DOMContentLoaded', function() {
         var mealInstructionsDiv = document.getElementById('mealInstructions');
         var mealIngredientsDiv = document.getElementById('mealIngredients');
 
-        function toggleDisplay(element) {
+        function toggleDisplay(element, ingredientObjects) {
             if (element.style.display === 'none') {
+                // Construct a string to display ingredient objects
+                var ingredientsText = ingredientObjects.map(ingredient => {
+                    return `${ingredient.name} - ${ingredient.measurement}`;
+                }).join('\n'); // Use '\n' to separate each ingredient
+        
                 mealInstructionsDiv.textContent = mealInstructions;
-                mealIngredientsDiv.textContent = ingredients;
+                mealIngredientsDiv.textContent = ingredientsText;
             } else {
                 element.style.display = 'none';
             }
         }
-
+        
         // Add click event listener to the meal image for toggling display
         mealImage.addEventListener('click', function(event) {
             event.stopPropagation(); // Prevent event bubbling
-
-            toggleDisplay(mealIngredientsEl);
+        
+            toggleDisplay(mealIngredientsEl, ingredientsList);
             toggleDisplay(mealInstructionsEl);
         });
 
@@ -190,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
     // Add click event listener to save menuplan into local storage
-    document.getElementById('saveBtn').addEventListener('click', function() {
+    document.getElementById('createBtn').addEventListener('click', function() {
         // Save the entire menu plan to local storage
         localStorage.setItem('mealPlanSaved', JSON.stringify(menuPlan));
     
@@ -203,41 +214,46 @@ document.addEventListener('DOMContentLoaded', function() {
         // Save ingredients to localStorage separately
         localStorage.setItem('ingredients', JSON.stringify(ingredientsList));
     
-           // Display ingredients in the shopping list
-           displayIngredients();
+        // Display ingredients in the shopping list
+        displayIngredients();
     });
 
- // Function to display the list of ingredients from local storage
- function displayIngredients() {
-    var ingredientsList = JSON.parse(localStorage.getItem('ingredients'));
+    // Define the variable to store unique lowercase ingredients globally
+var uniqueLowercaseIngredients = [];
 
-    // Get the div where you want to display the list
+ // Function to display the list of ingredients from local storage
+function displayIngredients() {
+    var ingredientsList = JSON.parse(localStorage.getItem('ingredients'));
     var ingredientsDiv = document.getElementById('list');
 
     if (ingredientsList && ingredientsList.length > 0) {
-        // Create an unordered list element
+        // Convert all ingredients to lowercase
+        var lowercaseIngredients = ingredientsList.map(ingredient => ingredient.name.toLowerCase());
+
+        // Convert the lowercase ingredients list to a Set to remove duplicates
+        uniqueLowercaseIngredients = [...new Set(lowercaseIngredients)];
+
         var ul = document.createElement('ul');
 
-        // Loop through the ingredients and create list items
-        ingredientsList.forEach(ingredient => {
+        uniqueLowercaseIngredients.forEach(ingredient => {
             var li = document.createElement('li');
+            // Display only the unique ingredient name in lowercase
             li.textContent = ingredient;
-            ul.appendChild(li); // Append each list item to the unordered list
+            ul.appendChild(li);
         });
 
-        // Append the unordered list to the div
+        // Clear the existing content before appending the new list
+        ingredientsDiv.innerHTML = '';
         ingredientsDiv.appendChild(ul);
     } else {
-        // If no ingredients are found, display a message
+        // Clear the existing content if no ingredients found
         ingredientsDiv.textContent = 'No ingredients found.';
     }
 }
-      
+
+// Add click event listener to save shopping list into local storage
+document.getElementById('saveListBtn').addEventListener('click', function() {
+    // Save the shopping list to local storage
+    localStorage.setItem('shoppingList', JSON.stringify(uniqueLowercaseIngredients));
 })
-
-
-
-  
-    
-
-     
+});
