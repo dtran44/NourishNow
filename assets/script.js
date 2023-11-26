@@ -183,13 +183,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fetchNewMealPlan();
 
+
+      // Add click event listener to generate a new meal plan
+      document.getElementById('regenBtn').addEventListener('click', function() {
+        fetchNewMealPlan();
+    })
+
     // Add click event listener to save menuplan into local storage
     document.getElementById('saveBtn').addEventListener('click', function() {
         localStorage.setItem('mealPlanSaved', JSON.stringify(menuPlan));
-    });
+    // Call the function to create a shopping list from the saved meal plan
+    createShoppingListFromMealPlan();}
+ ) })
+    // Function to create a shopping list from the saved meal plan
+    
+    function createShoppingListFromMealPlan() {
+        // Retrieve the saved meal plan from local storage
+        var savedMealPlan = JSON.parse(localStorage.getItem('mealPlanSaved'));
+    
+        if (savedMealPlan && savedMealPlan.length > 0) {
+            var shoppingList = {};
+    
+            // Loop through the saved meal plan
+            savedMealPlan.forEach(meal => {
+                // Extract ingredients from each meal
+                var ingredients = meal.ingredients;
+    
+                // Add ingredients to the shopping list while removing duplicates
+                ingredients.forEach(ingredient => {
+                    if (!shoppingList[ingredient]) {
+                        shoppingList[ingredient] = 1; // Initialize count for new ingredient
+                    } else {
+                        shoppingList[ingredient] += 1; // Increment count for existing ingredient
+                    }
+                });
+            });
+    
+            // Display the consolidated shopping list
+            var formattedShoppingList = 'Shopping List:\n';
+            for (const ingredient in shoppingList) {
+                if (Object.hasOwnProperty.call(shoppingList, ingredient)) {
+                    formattedShoppingList += `${ingredient} - Quantity: ${shoppingList[ingredient]}\n`;
+                }
+            }
+    
+            var shoppingListCart = document.getElementById('list');
+            shoppingListCart.textContent = formattedShoppingList;
+        }
+    }
+        
+    
 
-    // Add click event listener to generate a new meal plan
-    document.getElementById('regenBtn').addEventListener('click', function() {
-        fetchNewMealPlan();
-    });
-});
+
+
+
+  
+    
+
+     
