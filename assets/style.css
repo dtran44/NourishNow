@@ -1,8 +1,6 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    background: #FBFCFE;
-    height: 100vh;
-}  
+  background-color: #FFF5EE;
+}
 
 /* Style weekday with font and display */
 .weekday {
@@ -10,40 +8,65 @@ body {
     padding: 20px;
     font-size: 200%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+  }
+
+  .day {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: serif;
   }
 
   h3 {
     font-weight: bold;
+    font-family: 'Kranky', serif;
     padding: 20px;
-    font-size: 200%;
+    font-size: 70px;
     display: flex;
     justify-content: center;
   }
-  .breakfast {
-    font-weight: bold;
-    padding: 20px;
-    font-size: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  .lunch {
-    font-weight: bold;
-    padding: 20px;
-    font-size: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .dinner {
-    font-weight: bold;
-    padding: 20px;
-    font-size: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
+ 
   img.meal-image {
- width: 80%; 
+ width: 70%; 
  height: 40%; 
+}
+
+
+
+header h1 {
+  font-family: 'Kranky', serif;
+  font-size: 100px;
+  color: #2E8B57;
+  display: flex;
+  justify-content: center;
+}
+
+.recipe h1 {
+  align-items: center;
+  justify-content: center;
+  font-family: 'Kranky', serif;
+  font-size: 100px;
+  color: #2E8B57;
+  padding-top: 30px;
+
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  background-color: #353535;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  border-radius: 10px;
+  padding:15px;
+  min-height:30px; 
+  min-width: 120px;
+
+}
+
+.button:hover {
+  background-color:#2E8B57;
+  transition: 0.7s;
 }

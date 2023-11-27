@@ -76,6 +76,13 @@ document.addEventListener('DOMContentLoaded', function() {
         
                 mealInstructionsDiv.textContent = mealInstructions;
                 mealIngredientsDiv.textContent = ingredientsText;
+
+                  // Show the recipe div and hide the meal plan div
+                  document.getElementById('recipe').style.display = 'block';
+                  document.querySelectorAll('.weekday').forEach(weekday => {
+                      weekday.style.display = 'none';
+                  });
+
             } else {
                 element.style.display = 'none';
             }
@@ -100,6 +107,13 @@ document.addEventListener('DOMContentLoaded', function() {
             menu.appendChild(mealContainer);
         }
     }
+        document.getElementById('backRecipeBtn').addEventListener('click', function() {
+        document.getElementById('recipe').style.display = 'none'; // Hide the recipe div
+        document.querySelectorAll('.weekday').forEach(weekday => {
+            weekday.style.display = 'block'; // Show the meal plan div
+        
+        })
+        })
 
     // Function to fetch meal details by category
     function getMealDetailsByCategory(category) {
@@ -216,6 +230,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
         // Display ingredients in the shopping list
         displayIngredients();
+
+        // Show the list div
+        document.getElementById('list').style.display = 'block';
+        document.querySelectorAll('.weekday').forEach(weekday => {weekday.style.display = 'none'});
     });
 
     // Define the variable to store unique lowercase ingredients globally
@@ -256,4 +274,4 @@ document.getElementById('saveListBtn').addEventListener('click', function() {
     // Save the shopping list to local storage
     localStorage.setItem('shoppingList', JSON.stringify(uniqueLowercaseIngredients));
 })
-});
+})

@@ -5,18 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kranky&display=swap" rel="stylesheet">
     
 </head>
 
 
 <body>
-
-    <div>
-    <header><h1>Menu Plan</h1></header>
+  
+     <!-- Header -->
+   <header>
+    <section class="weekday">
+        <h1>Meal Plan</h1>
+        <div>
+            <ul>
+                <li><a href="#thisWeekPlan">This Week's Plan</a></li>
+                <li><a href="#shoppingList">Shopping List</a></li>
+            </ul>
+        </div>
+    </header>
+    
+     <!-- Weekday-->
     <section> 
-       
-        <section id="Monday" class="weekday">
-            <h3>Monday</h3>
+        <section id="Mon" class="weekday">
+            <h3>Mon</h3>
             <div class="breakfast" id="monday-breakfast">Breakfast</div>
             <div class="lunch" id="monday-lunch">Lunch</div>
             <div class="dinner" id="monday-dinner">Dinner</div>
@@ -25,70 +38,74 @@
 
     <section> 
         
-        <section id="Tuesday" class="weekday">
-            <h3>Tuesday</h3>
+        <section id="Tues" class="weekday">
+            <h3>Tues</h3>
             <div class="breakfast" id="tuesday-breakfast">Breakfast</div>
             <div class="lunch" id="tuesday-lunch">Lunch</div>
             <div class="dinner" id="tuesday-dinner">Dinner</div>
     </section>
 
     <section> 
-        <section id = "Wednesday" class ="weekday">
-        <h3>Wednesday</h3>
+        <section id = "Wed" class="weekday">
+        <h3>Wed</h3>
         <div class="breakfast" id="wednesday-breakfast">Breakfast</div>
         <div class="lunch" id="wednesday-lunch">Lunch</div>
         <div class="dinner" id="wednesday-dinner">Dinner</div>
     </section>
 
     <section> 
-        <section id = "Thursday" class ="weekday">
-        <h3>Thursday</h3>
+        <section id = "Thurs" class="weekday">
+        <h3>Thur</h3>
         <div class="breakfast" id="thursday-breakfast">Breakfast</div>
         <div class="lunch" id="thursday-lunch">Lunch</div>
         <div class="dinner" id="thursday-dinner">Dinner</div>
     </section>
 
     <section> 
-        <section id = "Friday" class ="weekday">
-        <h3>Friday</h3>
+        <section id = "Fri" class="weekday">
+        <h3>Fri</h3>
         <div class="breakfast" id="friday-breakfast">Breakfast</div>
         <div class="lunch" id="friday-lunch">Lunch</div>
         <div class="dinner" id="friday-dinner">Dinner</div>
     </section>
 
-    <button id="createBtn" class="pf-c-button pf-m-primary" type="button">
-        Save
+    <button id="createBtn" class="weekday button">
+        Create Shopping List
       </button>
-      <button id="regenBtn" class="pf-c-button pf-m-primary" type="button">
+      <button id="regenBtn" class="weekday button">
         Regenerate
       </button>
-      <button id="backBtn" class="pf-c-button pf-m-primary" type="button">
+      <button id="backBtn" class="weekday button">
         Back
       </button>
 
     </div>
 
-    <div>
-        <section id = "recipe" class ="recipe" style ="display: none"></section>
+    <div id = "recipe" class ="recipe" style ="display: none">
         <header><h1>Recipe</h1></header>
         <div class="mealIngredients" id="mealIngredients"></div>
         <div class="mealInstructions" id="mealInstructions"></div>
-        <button id="backBtn" class="pf-c-button pf-m-primary" type="button">
+        <button id="backRecipeBtn" class="button">
             Back
           </button>
     </div>
 
-    <div>
+    <div id = "list" class ="list" style ="display: none" >
         <header><h1>Shopping list</h1></header>
-        <section id = "list" class ="list"></section>
-        <button id="check-all-button" class="pf-c-button pf-m-primary" type="button">
+        <button id="check-all-button" class="list button">
             Check all
           </button>
-          <button id="uncheck-all-button" class="pf-c-button pf-m-secondary" type="button">
+          <button id="uncheck-all-button" class="list button">
             Uncheck all
           </button>
-          <button id="saveListBtn" class="pf-c-button pf-m-primary" type="button">
+          <button id="saveListBtn" class="list button">
             Save
+          </button>
+          <button id="locationBtn" class="list button">
+            Location
+          </button>
+          <button id="backListBtn" class="list button">
+            Back
           </button>
         </div>
 
