@@ -16,6 +16,7 @@
   
      <!-- Header -->
    <header>
+    <i class="fa-light fa-cart-shopping" style="color: #31511f;"></i>
     <section class="weekday">
         <h1>Meal Plan</h1>
       </section>
@@ -26,8 +27,8 @@
         <section id="Mon" class="weekday">
             <h3>Mon</h3>
             <div class="breakfast" id="monday-breakfast"></div>
-            <div class="lunch" id="monday-lunch">Lunch</div>
-            <div class="dinner" id="monday-dinner">Dinner</div>
+            <div class="lunch" id="monday-lunch"></div>
+            <div class="dinner" id="monday-dinner"></div>
     </section>
 
 
@@ -35,45 +36,45 @@
         
         <section id="Tues" class="weekday">
             <h3>Tues</h3>
-            <div class="breakfast" id="tuesday-breakfast">Breakfast</div>
-            <div class="lunch" id="tuesday-lunch">Lunch</div>
-            <div class="dinner" id="tuesday-dinner">Dinner</div>
+            <div class="breakfast" id="tuesday-breakfast"></div>
+            <div class="lunch" id="tuesday-lunch"></div>
+            <div class="dinner" id="tuesday-dinner"></div>
     </section>
 
     <section> 
         <section id = "Wed" class="weekday">
         <h3>Wed</h3>
-        <div class="breakfast" id="wednesday-breakfast">Breakfast</div>
-        <div class="lunch" id="wednesday-lunch">Lunch</div>
-        <div class="dinner" id="wednesday-dinner">Dinner</div>
+        <div class="breakfast" id="wednesday-breakfast"></div>
+        <div class="lunch" id="wednesday-lunch"></div>
+        <div class="dinner" id="wednesday-dinner"></div>
     </section>
 
     <section> 
         <section id = "Thurs" class="weekday">
         <h3>Thur</h3>
-        <div class="breakfast" id="thursday-breakfast">Breakfast</div>
-        <div class="lunch" id="thursday-lunch">Lunch</div>
-        <div class="dinner" id="thursday-dinner">Dinner</div>
+        <div class="breakfast" id="thursday-breakfast"></div>
+        <div class="lunch" id="thursday-lunch"></div>
+        <div class="dinner" id="thursday-dinner"></div>
     </section>
 
     <section> 
         <section id = "Fri" class="weekday">
         <h3>Fri</h3>
-        <div class="breakfast" id="friday-breakfast">Breakfast</div>
-        <div class="lunch" id="friday-lunch">Lunch</div>
-        <div class="dinner" id="friday-dinner">Dinner</div>
+        <div class="breakfast" id="friday-breakfast"></div>
+        <div class="lunch" id="friday-lunch"></div>
+        <div class="dinner" id="friday-dinner"></div>
     </section>
-
-    <button id="createBtn" class="weekday button">
+    <div class = "btn-container">
+      <button id="backBtn" class="weekday button">
+        Back
+      </button>
+      <button id="createBtn" class="weekday button">
         Create Shopping List
       </button>
       <button id="regenBtn" class="weekday button">
         Regenerate
       </button>
-      <button id="backBtn" class="weekday button">
-        Back
-      </button>
-
+    </div>
     </div>
 
      <!-- Recipe-->
@@ -90,11 +91,9 @@
     <div id = "list" class ="list" style ="display: none" >
         <header><h1>Shopping list</h1></header>
         <div class="shoppingList" id="shoppingList"></div>
-        <button id="check-all-button" class="list button">
-            Check all
-          </button>
-          <button id="uncheck-all-button" class="list button">
-            Uncheck all
+        <div class = "btn-container">
+          <button id="backListBtn" class="list button">
+            Back
           </button>
           <button id="saveListBtn" class="list button">
             Save
@@ -102,9 +101,7 @@
           <button id="locationBtn" class="list button">
             Location
           </button>
-          <button id="backListBtn" class="list button">
-            Back
-          </button>
+        </div>
         </div>
 
 

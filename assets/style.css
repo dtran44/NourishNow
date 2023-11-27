@@ -50,14 +50,21 @@ header h1 {
   padding-top: 30px;
 
 }
+ /* Style button container with display properties */
+ .btn-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 20vh; /* Set height to 100% of viewport height for vertical centering */
+  margin: 20px;
+}
 
 .button {
   display: flex;
-  align-items: center;
   justify-content: center; 
   background-color: #353535;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:sans-serif;
   border: none;
   border-radius: 10px;
   padding:15px;
@@ -69,4 +76,19 @@ header h1 {
 .button:hover {
   background-color:#2E8B57;
   transition: 0.7s;
+}
+
+/* CSS to remove bullet points */
+#shoppingList ul {
+  list-style: none; /* Remove default list style */
+  padding: 0; /* Remove default padding */ 
+  font-family:sans-serif;
+  font-size: 20px;
+  width: 70%; /* Set a width for the shopping list */
+  margin: 0 auto; /* Set left and right margins to auto to horizontally center */
+  text-align: left; /* Align text to the left within the shopping list */
+}
+
+#shoppingList ul li {
+  margin-bottom: 5px; /* Optional: Add some space between list items */
 }

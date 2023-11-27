@@ -107,6 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
             menu.appendChild(mealContainer);
         }
     }
+
+    // Add click event listener to back button on the Recipe page
         document.getElementById('backRecipeBtn').addEventListener('click', function() {
         document.getElementById('recipe').style.display = 'none'; // Hide the recipe div
         document.querySelectorAll('.weekday').forEach(weekday => {
@@ -115,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         })
 
-    // Function to fetch meal details by category
+    // Function to fetch meal details by category from API
     function getMealDetailsByCategory(category) {
         let apiUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
 
@@ -278,24 +280,45 @@ updateDinnerSection();
     // Define the variable to store unique lowercase ingredients globally
 var uniqueLowercaseIngredients = [];
 
- // Function to display the list of ingredients from local storage
+
+})
+
+document.getElementById('backListBtn').addEventListener('click', function() {
+    document.getElementById('list').style.display = 'none'; // Hide the shopping list div
+    document.querySelectorAll('.weekday').forEach(weekday => {
+        weekday.style.display = 'flex'; // Show the meal plan div
+    })
+    })
+
+// Function to display the list of ingredients with checkboxes from local storage
 function displayIngredients() {
     var ingredientsList = JSON.parse(localStorage.getItem('ingredients'));
     var ingredientsDiv = document.getElementById('shoppingList');
 
     if (ingredientsList && ingredientsList.length > 0) {
-        // Convert all ingredients to lowercase
-        var lowercaseIngredients = ingredientsList.map(ingredient => ingredient.name.toLowerCase());
-
-        // Convert the lowercase ingredients list to a Set to remove duplicates
-        uniqueLowercaseIngredients = [...new Set(lowercaseIngredients)];
-
         var ul = document.createElement('ul');
 
-        uniqueLowercaseIngredients.forEach(ingredient => {
+        ingredientsList.forEach(ingredient => {
             var li = document.createElement('li');
-            // Display only the unique ingredient name in lowercase
-            li.textContent = ingredient;
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = ingredient.name;
+            checkbox.id = ingredient.name.toLowerCase().replace(/\s/g, '-'); // Create unique ID for each checkbox
+            var label = document.createElement('label');
+            label.textContent = ingredient.name;
+            label.htmlFor = checkbox.id;
+
+            // Add event listener for strike-through effect
+            checkbox.addEventListener('change', function() {
+                if (checkbox.checked) {
+                    label.style.textDecoration = 'line-through';
+                } else {
+                    label.style.textDecoration = 'none';
+                }
+            });
+
+            li.appendChild(checkbox);
+            li.appendChild(label);
             ul.appendChild(li);
         });
 
@@ -308,17 +331,15 @@ function displayIngredients() {
     }
 }
 
-// Add click event listener to save shopping list into local storage
 document.getElementById('saveListBtn').addEventListener('click', function() {
-    // Save the shopping list to local storage
-    localStorage.setItem('shoppingList', JSON.stringify(uniqueLowercaseIngredients));
-})
+    // Save the unchecked shopping list items to local storage
+    var uncheckedIngredients = [];
+    var checkboxes = document.querySelectorAll('.shoppingList input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        if (!checkbox.checked) {
+            uncheckedIngredients.push(checkbox.value);
+        }
+    });
+    localStorage.setItem('shoppingList', JSON.stringify(uncheckedIngredients));
+});
 
-document.getElementById('backListBtn').addEventListener('click', function() {
-    document.getElementById('list').style.display = 'none'; // Hide the shopping list div
-    document.querySelectorAll('.weekday').forEach(weekday => {
-        weekday.style.display = 'flex'; // Show the meal plan div
-    })
-    })
-
-})
