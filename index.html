@@ -18,19 +18,14 @@
    <header>
     <section class="weekday">
         <h1>Meal Plan</h1>
-        <div>
-            <ul>
-                <li><a href="#thisWeekPlan">This Week's Plan</a></li>
-                <li><a href="#shoppingList">Shopping List</a></li>
-            </ul>
-        </div>
+      </section>
     </header>
     
      <!-- Weekday-->
     <section> 
         <section id="Mon" class="weekday">
             <h3>Mon</h3>
-            <div class="breakfast" id="monday-breakfast">Breakfast</div>
+            <div class="breakfast" id="monday-breakfast"></div>
             <div class="lunch" id="monday-lunch">Lunch</div>
             <div class="dinner" id="monday-dinner">Dinner</div>
     </section>
@@ -81,6 +76,7 @@
 
     </div>
 
+     <!-- Recipe-->
     <div id = "recipe" class ="recipe" style ="display: none">
         <header><h1>Recipe</h1></header>
         <div class="mealIngredients" id="mealIngredients"></div>
@@ -90,8 +86,10 @@
           </button>
     </div>
 
+    <!-- Shopping List-->
     <div id = "list" class ="list" style ="display: none" >
         <header><h1>Shopping list</h1></header>
+        <div class="shoppingList" id="shoppingList"></div>
         <button id="check-all-button" class="list button">
             Check all
           </button>

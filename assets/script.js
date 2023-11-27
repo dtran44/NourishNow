@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('backRecipeBtn').addEventListener('click', function() {
         document.getElementById('recipe').style.display = 'none'; // Hide the recipe div
         document.querySelectorAll('.weekday').forEach(weekday => {
-            weekday.style.display = 'block'; // Show the meal plan div
+            weekday.style.display = 'flex'; // Show the meal plan div
         
         })
         })
@@ -208,6 +208,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fetchNewMealPlan();
 
+// Function to update the breakfast section for each day with the word "Breakfast"
+function updateBreakfastSection() {
+    // Iterate through each day of the week
+    day.forEach(day => {
+        var breakfastElement = document.getElementById(`${day.toLowerCase()}-breakfast`);
+        if (breakfastElement) {
+            // Update the content of the breakfast section
+            breakfastElement.textContent = 'Breakfast';
+        }
+    });
+}
+
+// Function to update the lunch section for each day with the word "Lunch"
+function updateLunchSection() {
+    // Iterate through each day of the week
+    day.forEach(day => {
+        var lunchElement = document.getElementById(`${day.toLowerCase()}-lunch`);
+        if (lunchElement) {
+            // Update the content of the Lunch section
+            lunchElement.textContent = 'Lunch';
+        }
+    });
+}
+// Function to update the dinner section for each day with the word "Dinner"
+function updateDinnerSection() {
+    // Iterate through each day of the week
+    day.forEach(day => {
+        var dinnerElement = document.getElementById(`${day.toLowerCase()}-dinner`);
+        if (dinnerElement) {
+            // Update the content of the Dinner section
+            dinnerElement.textContent = 'Dinner';
+        }
+    });
+}
+// Call the function to update the meal headings
+updateBreakfastSection();
+updateLunchSection();
+updateDinnerSection();
+
 
       // Add click event listener to generate a new meal plan
       document.getElementById('regenBtn').addEventListener('click', function() {
@@ -231,9 +270,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Display ingredients in the shopping list
         displayIngredients();
 
-        // Show the list div
-        document.getElementById('list').style.display = 'block';
-        document.querySelectorAll('.weekday').forEach(weekday => {weekday.style.display = 'none'});
+       // Show the list div
+       document.getElementById('list').style.display = 'block';
+       document.querySelectorAll('.weekday').forEach(weekday => {weekday.style.display = 'none'});
     });
 
     // Define the variable to store unique lowercase ingredients globally
@@ -242,7 +281,7 @@ var uniqueLowercaseIngredients = [];
  // Function to display the list of ingredients from local storage
 function displayIngredients() {
     var ingredientsList = JSON.parse(localStorage.getItem('ingredients'));
-    var ingredientsDiv = document.getElementById('list');
+    var ingredientsDiv = document.getElementById('shoppingList');
 
     if (ingredientsList && ingredientsList.length > 0) {
         // Convert all ingredients to lowercase
@@ -274,4 +313,12 @@ document.getElementById('saveListBtn').addEventListener('click', function() {
     // Save the shopping list to local storage
     localStorage.setItem('shoppingList', JSON.stringify(uniqueLowercaseIngredients));
 })
+
+document.getElementById('backListBtn').addEventListener('click', function() {
+    document.getElementById('list').style.display = 'none'; // Hide the shopping list div
+    document.querySelectorAll('.weekday').forEach(weekday => {
+        weekday.style.display = 'flex'; // Show the meal plan div
+    })
+    })
+
 })
