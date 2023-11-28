@@ -1,6 +1,177 @@
 body {
-  background-color: #FFF5EE;
+  background-image: url("../images/vecteezy_still-life-of-assorted-vegetables_1853269.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+.appName {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant', serif;
+  font-weight: 500;
+  font-size: 150px;
+  color: #FFFFF6;
+  padding-top: 70px;
+  margin: 0px;
+}
+
+.appDescript {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:'Cormorant', serif;
+  font-size: 39px;
+  color: #013220;
+  padding: 20px;
+  margin: 20px;
+}
+
+.startButton {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.start {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  background-color: #353535;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  border-radius: 10px;
+  padding:15px;
+  min-height:30px; 
+  min-width: 120px;
+}
+
+.start:hover {
+  background-color:#2E8B57;
+  transition: 0.7s;
+}
+
+.hide {
+  display: none;
+}
+
+.dietSelect h1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:'Cormorant', serif;
+  font-size: 50px;
+  color: #FFFFF1;;
+}
+
+.dietSelect ul {
+  list-style-type: none;
+}
+
+.Meat {
+  align-items: center;
+  justify-content: center; 
+  background-color: #353535;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  padding:15px;
+  margin: 35px;
+  min-height:30px; 
+  min-width: 120px;
+}
+
+.Vego {
+  align-items: center;
+  justify-content: center; 
+  background-color: #353535;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  padding:15px;
+  margin: 35px;
+  min-height:30px; 
+  min-width: 120px;
+}
+
+.Vegan {
+  align-items: center;
+  justify-content: center; 
+  background-color: #353535;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  padding:15px;
+  margin: 35px;
+  min-height:30px; 
+  min-width: 120px;
+}
+
+.GF {
+  align-items: center;
+  justify-content: center; 
+  background-color: #353535;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  padding:15px;
+  margin: 35px;
+  min-height:30px; 
+  min-width: 120px;
+}
+
+.Meat:hover {
+  background-color:#2E8B57;
+  transition: 0.7s;
+}
+
+.Vego:hover {
+  background-color:#2E8B57;
+  transition: 0.7s;
+}
+
+.Vegan:hover {
+  background-color:#2E8B57;
+  transition: 0.7s;
+}
+
+.GF:hover {
+  background-color:#2E8B57;
+  transition: 0.7s;
+}
+
+.dietSelect {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+ul {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.fiveDayMealPlan {
+  align-items: center;
+  justify-content: center;
+  font-family:'Cormorant', serif;
+  font-size: 50px;
+  color: #FFFFF1;
+}
+
+
 
 /* Style weekday with font and display */
 .weekday {
@@ -91,4 +262,10 @@ header h1 {
 
 #shoppingList ul li {
   margin-bottom: 5px; /* Optional: Add some space between list items */
+}
+
+#mealIngredients {
+  list-style-type: style disc;;
+  font-family:sans-serif;
+
 }

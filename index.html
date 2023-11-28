@@ -1,40 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nourish Now</title>
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kranky&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500&display=swap" rel="stylesheet">            
 </head>
 
-
 <body>
-  
+
+    <section class="landingPage">
+        <header>
+            <h1 class="appName">Nourish Now.</h1>
+            <h3 class="appDescript">A five Day Meal Planner</h3>
+        </header>
+        
+        <div class="startButton">
+            <button type="button" class="start">Start your Nourish Plan</button>
+        </div>
+    </section>
+
+    <section class="dietSelect">
+        <header>
+            <h1>Select Your Diet</h1>
+        </header>
+            <ul>
+                <li>
+                    <button class="Meat">Carnivore</button>
+                </li>
+                <li>
+                    <button class="Vego">Vegetarian</button>
+                </li>
+                <li>
+                    <button class="Vegan">Vegan</button>
+                </li>
+            </ul>   
+    </section>
+
      <!-- Header -->
    <header>
-    <i class="fa-light fa-cart-shopping" style="color: #31511f;"></i>
-    <section class="weekday">
-        <h1>Meal Plan</h1>
+  </button>
+  <button id="cart" class="weekday button" style ="display: none">
+    Cart
+  </button>
+    <section class ="weekday" style ="display: none">
+        <h1>Your Meal Plan</h1>
       </section>
     </header>
     
      <!-- Weekday-->
     <section> 
-        <section id="Mon" class="weekday">
+        <section id="Mon" class ="weekday" style ="display: none">
             <h3>Mon</h3>
             <div class="breakfast" id="monday-breakfast"></div>
             <div class="lunch" id="monday-lunch"></div>
             <div class="dinner" id="monday-dinner"></div>
     </section>
 
-
     <section> 
-        
-        <section id="Tues" class="weekday">
+        <section id="Tues" class ="weekday" style ="display: none">
             <h3>Tues</h3>
             <div class="breakfast" id="tuesday-breakfast"></div>
             <div class="lunch" id="tuesday-lunch"></div>
@@ -42,7 +69,7 @@
     </section>
 
     <section> 
-        <section id = "Wed" class="weekday">
+        <section id = "Wed" class ="weekday" style ="display: none">
         <h3>Wed</h3>
         <div class="breakfast" id="wednesday-breakfast"></div>
         <div class="lunch" id="wednesday-lunch"></div>
@@ -50,7 +77,7 @@
     </section>
 
     <section> 
-        <section id = "Thurs" class="weekday">
+        <section id = "Thurs" class ="weekday" style ="display: none">
         <h3>Thur</h3>
         <div class="breakfast" id="thursday-breakfast"></div>
         <div class="lunch" id="thursday-lunch"></div>
@@ -58,20 +85,21 @@
     </section>
 
     <section> 
-        <section id = "Fri" class="weekday">
+        <section id = "Fri" class ="weekday" style ="display: none">
         <h3>Fri</h3>
         <div class="breakfast" id="friday-breakfast"></div>
         <div class="lunch" id="friday-lunch"></div>
         <div class="dinner" id="friday-dinner"></div>
     </section>
-    <div class = "btn-container">
-      <button id="backBtn" class="weekday button">
+
+    <div class = "btn-container weekday" style ="display: none">
+      <button id="backBtn" class="button">
         Back
       </button>
-      <button id="createBtn" class="weekday button">
+      <button id="createBtn" class="button">
         Create Shopping List
       </button>
-      <button id="regenBtn" class="weekday button">
+      <button id="regenBtn" class="button">
         Regenerate
       </button>
     </div>
@@ -105,7 +133,8 @@
         </div>
 
 
-    <script src="./assets/script.js"></script>
+        <script src="./assets/script.js"></script>
 
 </body>
     </html>
+
