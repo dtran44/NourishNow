@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nourish Now</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500&display=swap" rel="stylesheet"> 
-                
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500&display=swap" rel="stylesheet">            
 </head>
+
 <body>
+
     <section class="landingPage">
         <header>
             <h1 class="appName">Nourish Now.</h1>
@@ -36,18 +37,104 @@
                 <li>
                     <button class="Vegan">Vegan</button>
                 </li>
-                <li>
-                    <button class="GF">Gluten Free</button>
-                </li>
             </ul>   
     </section>
 
-    <section class="fiveDayMealPlan">
-        <header>
-            <h1>Your Meal Plan</h1>
-        </header>
+     <!-- Header -->
+   <header>
+  </button>
+  <button id="cart" class="weekday button" style ="display: none">
+    Cart
+  </button>
+    <section class ="weekday" style ="display: none">
+        <h1>Your Meal Plan</h1>
+      </section>
+    </header>
+    
+     <!-- Weekday-->
+    <section> 
+        <section id="Mon" class ="weekday" style ="display: none">
+            <h3>Mon</h3>
+            <div class="breakfast" id="monday-breakfast"></div>
+            <div class="lunch" id="monday-lunch"></div>
+            <div class="dinner" id="monday-dinner"></div>
     </section>
 
-    <script src="./script.js"></script>
+    <section> 
+        <section id="Tues" class ="weekday" style ="display: none">
+            <h3>Tues</h3>
+            <div class="breakfast" id="tuesday-breakfast"></div>
+            <div class="lunch" id="tuesday-lunch"></div>
+            <div class="dinner" id="tuesday-dinner"></div>
+    </section>
+
+    <section> 
+        <section id = "Wed" class ="weekday" style ="display: none">
+        <h3>Wed</h3>
+        <div class="breakfast" id="wednesday-breakfast"></div>
+        <div class="lunch" id="wednesday-lunch"></div>
+        <div class="dinner" id="wednesday-dinner"></div>
+    </section>
+
+    <section> 
+        <section id = "Thurs" class ="weekday" style ="display: none">
+        <h3>Thur</h3>
+        <div class="breakfast" id="thursday-breakfast"></div>
+        <div class="lunch" id="thursday-lunch"></div>
+        <div class="dinner" id="thursday-dinner"></div>
+    </section>
+
+    <section> 
+        <section id = "Fri" class ="weekday" style ="display: none">
+        <h3>Fri</h3>
+        <div class="breakfast" id="friday-breakfast"></div>
+        <div class="lunch" id="friday-lunch"></div>
+        <div class="dinner" id="friday-dinner"></div>
+    </section>
+
+    <div class = "btn-container weekday" style ="display: none">
+      <button id="backBtn" class="button">
+        Back
+      </button>
+      <button id="createBtn" class="button">
+        Create Shopping List
+      </button>
+      <button id="regenBtn" class="button">
+        Regenerate
+      </button>
+    </div>
+    </div>
+
+     <!-- Recipe-->
+    <div id = "recipe" class ="recipe" style ="display: none">
+        <header><h1>Recipe</h1></header>
+        <div class="mealIngredients" id="mealIngredients"></div>
+        <div class="mealInstructions" id="mealInstructions"></div>
+        <button id="backRecipeBtn" class="button">
+            Back
+          </button>
+    </div>
+
+    <!-- Shopping List-->
+    <div id = "list" class ="list" style ="display: none" >
+        <header><h1>Shopping list</h1></header>
+        <div class="shoppingList" id="shoppingList"></div>
+        <div class = "btn-container">
+          <button id="backListBtn" class="list button">
+            Back
+          </button>
+          <button id="saveListBtn" class="list button">
+            Save
+          </button>
+          <button id="locationBtn" class="list button">
+            Location
+          </button>
+        </div>
+        </div>
+
+
+        <script src="./assets/script.js"></script>
+
 </body>
-</html>
+    </html>
+

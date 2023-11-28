@@ -1,0 +1,271 @@
+body {
+  background-image: url("../images/vecteezy_still-life-of-assorted-vegetables_1853269.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.appName {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant', serif;
+  font-weight: 500;
+  font-size: 150px;
+  color: #FFFFF6;
+  padding-top: 70px;
+  margin: 0px;
+}
+
+.appDescript {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:'Cormorant', serif;
+  font-size: 39px;
+  color: #013220;
+  padding: 20px;
+  margin: 20px;
+}
+
+.startButton {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.start {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  background-color: #353535;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  border-radius: 10px;
+  padding:15px;
+  min-height:30px; 
+  min-width: 120px;
+}
+
+.start:hover {
+  background-color:#2E8B57;
+  transition: 0.7s;
+}
+
+.hide {
+  display: none;
+}
+
+.dietSelect h1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:'Cormorant', serif;
+  font-size: 50px;
+  color: #FFFFF1;;
+}
+
+.dietSelect ul {
+  list-style-type: none;
+}
+
+.Meat {
+  align-items: center;
+  justify-content: center; 
+  background-color: #353535;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  padding:15px;
+  margin: 35px;
+  min-height:30px; 
+  min-width: 120px;
+}
+
+.Vego {
+  align-items: center;
+  justify-content: center; 
+  background-color: #353535;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  padding:15px;
+  margin: 35px;
+  min-height:30px; 
+  min-width: 120px;
+}
+
+.Vegan {
+  align-items: center;
+  justify-content: center; 
+  background-color: #353535;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  padding:15px;
+  margin: 35px;
+  min-height:30px; 
+  min-width: 120px;
+}
+
+.GF {
+  align-items: center;
+  justify-content: center; 
+  background-color: #353535;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  padding:15px;
+  margin: 35px;
+  min-height:30px; 
+  min-width: 120px;
+}
+
+.Meat:hover {
+  background-color:#2E8B57;
+  transition: 0.7s;
+}
+
+.Vego:hover {
+  background-color:#2E8B57;
+  transition: 0.7s;
+}
+
+.Vegan:hover {
+  background-color:#2E8B57;
+  transition: 0.7s;
+}
+
+.GF:hover {
+  background-color:#2E8B57;
+  transition: 0.7s;
+}
+
+.dietSelect {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+ul {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.fiveDayMealPlan {
+  align-items: center;
+  justify-content: center;
+  font-family:'Cormorant', serif;
+  font-size: 50px;
+  color: #FFFFF1;
+}
+
+
+
+/* Style weekday with font and display */
+.weekday {
+    font-weight: bold;
+    padding: 20px;
+    font-size: 200%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .day {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: serif;
+  }
+
+  h3 {
+    font-weight: bold;
+    font-family: 'Kranky', serif;
+    padding: 20px;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+  }
+ 
+  img.meal-image {
+ width: 70%; 
+ height: 40%; 
+}
+
+
+
+header h1 {
+  font-family: 'Kranky', serif;
+  font-size: 100px;
+  color: #2E8B57;
+  display: flex;
+  justify-content: center;
+}
+
+.recipe h1 {
+  align-items: center;
+  justify-content: center;
+  font-family: 'Kranky', serif;
+  font-size: 100px;
+  color: #2E8B57;
+  padding-top: 30px;
+
+}
+ /* Style button container with display properties */
+ .btn-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 20vh; /* Set height to 100% of viewport height for vertical centering */
+  margin: 20px;
+}
+
+.button {
+  display: flex;
+  justify-content: center; 
+  background-color: #353535;
+  color: white;
+  font-family:sans-serif;
+  border: none;
+  border-radius: 10px;
+  padding:15px;
+  min-height:30px; 
+  min-width: 120px;
+
+}
+
+.button:hover {
+  background-color:#2E8B57;
+  transition: 0.7s;
+}
+
+/* CSS to remove bullet points */
+#shoppingList ul {
+  list-style: none; /* Remove default list style */
+  padding: 0; /* Remove default padding */ 
+  font-family:sans-serif;
+  font-size: 20px;
+  width: 70%; /* Set a width for the shopping list */
+  margin: 0 auto; /* Set left and right margins to auto to horizontally center */
+  text-align: left; /* Align text to the left within the shopping list */
+}
+
+#shoppingList ul li {
+  margin-bottom: 5px; /* Optional: Add some space between list items */
+}
+
+#mealIngredients {
+  list-style-type: style disc;;
+  font-family:sans-serif;
+
+}
