@@ -30,6 +30,7 @@ function fetchAndDisplayMeal(day, mealType, category) {
   var specificCategory = category;
 
   // Check if the meal type is Lunch or Dinner and modify the category accordingly
+
   if (mealType === "Lunch") {
     if (userCategory === "Vegan") {
       specificCategory = "Vegan";
@@ -117,7 +118,7 @@ function fetchAndDisplayMeal(day, mealType, category) {
           .map((ingredient) => {
             return `${ingredient.name} - ${ingredient.measurement}`;
           })
-          .join("\n"); // Use '\n' to separate each ingredient
+          .join("\n"); 
 
         mealInstructionsDiv.textContent = mealInstructions;
         mealIngredientsDiv.textContent = ingredientsText;
@@ -290,47 +291,6 @@ document.getElementById("backRecipeBtn").addEventListener("click", function () {
   });
 });
 
-// Function to update the breakfast section for each day with the word "Breakfast"
-function updateBreakfastSection() {
-  // Iterate through each day of the week
-  day.forEach((day) => {
-    var breakfastElement = document.getElementById(
-      `${day.toLowerCase()}-breakfast`
-    );
-    if (breakfastElement) {
-      // Update the content of the breakfast section
-      breakfastElement.textContent = "Breakfast";
-    }
-  });
-}
-
-// Function to update the lunch section for each day with the word "Lunch"
-function updateLunchSection() {
-  // Iterate through each day of the week
-  day.forEach((day) => {
-    var lunchElement = document.getElementById(`${day.toLowerCase()}-lunch`);
-    if (lunchElement) {
-      // Update the content of the Lunch section
-      lunchElement.textContent = "Lunch";
-    }
-  });
-}
-// Function to update the dinner section for each day with the word "Dinner"
-function updateDinnerSection() {
-  // Iterate through each day of the week
-  day.forEach((day) => {
-    var dinnerElement = document.getElementById(`${day.toLowerCase()}-dinner`);
-    if (dinnerElement) {
-      // Update the content of the Dinner section
-      dinnerElement.textContent = "Dinner";
-    }
-  });
-}
-// Call the function to update the meal headings
-updateBreakfastSection();
-updateLunchSection();
-updateDinnerSection();
-
 // Add click event listener to generate a new meal plan
 document.getElementById("regenBtn").addEventListener("click", function () {
   fetchNewMealPlan();
@@ -360,19 +320,6 @@ document.getElementById("createBtn").addEventListener("click", function () {
   });
 });
 
-document.getElementById("backListBtn").addEventListener("click", function () {
-  document.getElementById("list").style.display = "none"; // Hide the shopping list div
-  document.querySelectorAll(".weekday").forEach((weekday) => {
-    weekday.style.display = "flex"; // Show the meal plan div
-  });
-});
-
-document.getElementById("backBtn").addEventListener("click", function () {
-  document.querySelectorAll(".weekday").forEach((weekday) => {
-    weekday.style.display = "none"; // Hide the meal plan div
-    dietSelectPage.style.display = "block"; // Show the diet Select div
-  });
-});
 
 // Function to display the list of ingredients with checkboxes from local storage
 function displayIngredients() {
@@ -380,16 +327,22 @@ function displayIngredients() {
   var ingredientsDiv = document.getElementById("shoppingList");
 
   if (ingredientsList && ingredientsList.length > 0) {
-    var ul = document.createElement("ul");
+    var uniqueIngredients = new Set(); // Use a Set to store unique ingredients
 
     ingredientsList.forEach((ingredient) => {
+      uniqueIngredients.add(ingredient.name.toLowerCase()); // Store ingredient names in lowercase to ensure case-insensitive comparison
+    });
+
+    var ul = document.createElement("ul");
+
+    uniqueIngredients.forEach((ingredientName) => {
       var li = document.createElement("li");
       var checkbox = document.createElement("input");
       checkbox.type = "checkbox";
-      checkbox.value = ingredient.name;
-      checkbox.id = ingredient.name.toLowerCase().replace(/\s/g, "-"); // Create unique ID for each checkbox
+      checkbox.value = ingredientName;
+      checkbox.id = ingredientName.replace(/\s/g, "-"); // Create unique ID for each checkbox
       var label = document.createElement("label");
-      label.textContent = ingredient.name;
+      label.textContent = ingredientName;
       label.htmlFor = checkbox.id;
 
       // Add event listener for strike-through effect
@@ -415,8 +368,8 @@ function displayIngredients() {
   }
 }
 
+// Save the unchecked shopping list items to local storage
 document.getElementById("saveListBtn").addEventListener("click", function () {
-  // Save the unchecked shopping list items to local storage
   var uncheckedIngredients = [];
   var checkboxes = document.querySelectorAll(
     '.shoppingList input[type="checkbox"]'
@@ -427,6 +380,11 @@ document.getElementById("saveListBtn").addEventListener("click", function () {
     }
   });
   localStorage.setItem("shoppingList", JSON.stringify(uncheckedIngredients));
-});
+  document.getElementById("list").style.display = "none"; // Hide the shopping list div
+  document.querySelectorAll(".weekday").forEach((weekday) => {
+    weekday.style.display = "flex"; // Show the meal plan div
+  
+  });
 
+});
 

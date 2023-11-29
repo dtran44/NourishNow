@@ -42,12 +42,8 @@
 
      <!-- Header -->
    <header>
-  </button>
-  <button id="cart" class="weekday button" style ="display: none">
-    Cart
-  </button>
     <section class ="weekday" style ="display: none">
-        <h1>Your Meal Plan</h1>
+        <h1 class="planName">Your Nourish Plan</h1>
       </section>
     </header>
     
@@ -93,41 +89,42 @@
     </section>
 
     <div class = "btn-container weekday" style ="display: none">
-      <button id="backBtn" class="button">
-        Back
+      <button id="regenBtn" class="button1">
+        Regenerate Meal Plan
       </button>
-      <button id="createBtn" class="button">
+      <button id="createBtn" class="button1">
         Create Shopping List
       </button>
-      <button id="regenBtn" class="button">
-        Regenerate
-      </button>
+      <a href="savedShoppingList.html"><button id="shoppingListBtn" class="button1">
+        View Shopping List
+      </button></a>
     </div>
     </div>
 
      <!-- Recipe-->
     <div id = "recipe" class ="recipe" style ="display: none">
         <header><h1>Recipe</h1></header>
-        <div class="mealIngredients" id="mealIngredients"></div>
-        <div class="mealInstructions" id="mealInstructions"></div>
-        <button id="backRecipeBtn" class="button">
+        <header>
+          <h2>Meal Ingredients</h2>
+      </header>
+        <div class="mealIngredients" id="mealIngredients">Ingredients</div>
+        <header>
+          <h2>Instructions</h2>
+      </header>
+        <div class="mealInstructions" id="mealInstructions">Instructions</div>
+        <button id="backRecipeBtn" class="button1">
             Back
           </button>
     </div>
 
     <!-- Shopping List-->
     <div id = "list" class ="list" style ="display: none" >
-        <header><h1>Shopping list</h1></header>
+        <header><h1 class="listName">Create Your Shopping list</h1></header>
+        <p>This is your Nourish Plan ingredients list for the week. Check off what you already have in the fridge.</p>
         <div class="shoppingList" id="shoppingList"></div>
         <div class = "btn-container">
-          <button id="backListBtn" class="list button">
-            Back
-          </button>
-          <button id="saveListBtn" class="list button">
-            Save
-          </button>
-          <button id="locationBtn" class="list button">
-            Location
+          <button id="saveListBtn" class="list button1">
+            Done
           </button>
         </div>
         </div>
@@ -137,4 +134,3 @@
 
 </body>
     </html>
-
