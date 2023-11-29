@@ -163,23 +163,13 @@ ul {
   margin: auto;
 }
 
-.fiveDayMealPlan {
-  align-items: center;
-  justify-content: center;
-  font-family:'Cormorant', serif;
-  font-size: 50px;
-  color: #FFFFF1;
-}
-
-
-
 /* Style weekday with font and display */
 .weekday {
     font-weight: bold;
-    padding: 20px;
     font-size: 200%;
     display: flex;
     justify-content: space-evenly;
+    padding: 40px;
   }
 
   .day {
@@ -190,35 +180,62 @@ ul {
 
   h3 {
     font-weight: bold;
-    font-family: 'Kranky', serif;
+    font-family: 'Cormorant', serif;
     padding: 20px;
     font-size: 70px;
     display: flex;
     justify-content: center;
   }
+
+  h2 {
+    font-weight: bold;
+    font-family: 'Cormorant', serif;
+    padding: 20px;
+    padding-left: 30px;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+  }
  
-  img.meal-image {
+ 
+img.meal-image {
  width: 70%; 
  height: 40%; 
 }
 
 
-
-header h1 {
-  font-family: 'Kranky', serif;
+.planName {
+  font-family: 'Cormorant', serif;
   font-size: 100px;
   color: #2E8B57;
   display: flex;
   justify-content: center;
 }
 
-.recipe h1 {
-  align-items: center;
-  justify-content: center;
-  font-family: 'Kranky', serif;
+.listName {
+  font-family: 'Cormorant', serif;
   font-size: 100px;
   color: #2E8B57;
-  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.cartName {
+  font-family: 'Cormorant', serif;
+  font-size: 100px;
+  color: #2E8B57;
+  display: flex;
+  justify-content: center;
+}
+
+
+.recipe h1 {
+  display: flex;
+  justify-content: center;
+  font-family: 'Cormorant', serif;
+  font-size: 100px;
+  color: #2E8B57;
+  padding: 70px;
 
 }
  /* Style button container with display properties */
@@ -249,23 +266,79 @@ header h1 {
   transition: 0.7s;
 }
 
-/* CSS to remove bullet points */
+.button1:hover {
+  background-color:#2E8B57;
+  transition: 0.7s;
+}
+
 #shoppingList ul {
-  list-style: none; /* Remove default list style */
-  padding: 0; /* Remove default padding */ 
-  font-family:sans-serif;
+  list-style: none; 
+  padding: 5px; 
+  font-family:'Arial';
   font-size: 20px;
-  width: 70%; /* Set a width for the shopping list */
-  margin: 0 auto; /* Set left and right margins to auto to horizontally center */
-  text-align: left; /* Align text to the left within the shopping list */
+  width: 70%; 
+  margin: 0 auto; 
+  text-align: center; 
 }
 
 #shoppingList ul li {
-  margin-bottom: 5px; /* Optional: Add some space between list items */
+  margin-bottom: 5px; 
+}
+
+#list p {
+  padding: 5px; 
+  font-family:'Arial';
+  font-size: 30px;
+  width: 70%; 
+  margin: 0 auto; 
+  text-align: center; 
+  padding-bottom: 50px;
 }
 
 #mealIngredients {
-  list-style-type: style disc;;
+  list-style-type: style disc;
+  font-family:Arial;
+  padding:30px;
+}
+
+#mealInstructions {
+  list-style-type: style disc;
+  font-family:Arial;
+  padding:30px;
+  margin-bottom: 20px;
+}
+
+#shoppingCart {
+  align-content: left;
+  font-family:'Cormorant', serif;
+  font-size: 30px;
+  border: none;
+  border-radius: 10px;
+}
+
+.button1 {
+  display: flex;
+  justify-content: center; 
+  background-color: #353535;
+  color: white;
   font-family:sans-serif;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  padding:15px;
+  min-height:30px; 
+  min-width: 120px;
+
+}
+
+#savedList ul li {
+  list-style: none; 
+  width: 250px;
+  font-family:'Arial';
+  font-size: 20px;
+  width: 70%; 
+  margin: 0 auto; 
+  text-align: center; 
+  background-color: #FFFFF6;
 
 }
