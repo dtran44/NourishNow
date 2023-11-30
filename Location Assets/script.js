@@ -12,7 +12,7 @@ function initMap() {
   });
 
   const request = {
-    query: "Supermarket near me",
+    query: "Supermarket close to me",
     fields: ["name", "geometry"],
   };
 
