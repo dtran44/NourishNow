@@ -29,8 +29,7 @@ function fetchAndDisplayMeal(day, mealType, category) {
   // Fetch lunch and dinner meals based on userCategory
   var specificCategory = category;
 
-  // Check if the meal type is Lunch or Dinner and modify the category accordingly
-
+  // Check if the meal type is Lunch or Dinner and modify the category 
   if (mealType === "Lunch") {
     if (userCategory === "Vegan") {
       specificCategory = "Vegan";

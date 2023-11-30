@@ -12,7 +12,7 @@ body {
   font-weight: 500;
   font-size: 150px;
   color: #FFFFF6;
-  padding-top: 70px;
+  padding-top: 100px;
   margin: 0px;
 }
 
@@ -62,6 +62,7 @@ body {
   justify-content: center;
   font-family:'Cormorant', serif;
   font-size: 50px;
+  padding-top: 100px;
   color: #FFFFF1;;
 }
 
@@ -163,7 +164,6 @@ ul {
   margin: auto;
 }
 
-/* Style weekday with font and display */
 .weekday {
     font-weight: bold;
     font-size: 200%;
@@ -216,6 +216,7 @@ img.meal-image {
   font-family: 'Cormorant', serif;
   font-size: 100px;
   color: #2E8B57;
+  padding: 50px;
   display: flex;
   justify-content: center;
 }
@@ -226,6 +227,7 @@ img.meal-image {
   color: #2E8B57;
   display: flex;
   justify-content: center;
+  padding: 50px;
 }
 
 
@@ -235,7 +237,7 @@ img.meal-image {
   font-family: 'Cormorant', serif;
   font-size: 100px;
   color: #2E8B57;
-  padding: 70px;
+  padding: 20px;
 
 }
  /* Style button container with display properties */
