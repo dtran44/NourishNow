@@ -47,10 +47,10 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 ## Credits
 
 Diana Tran
-link here 
+[link here ](https://github.com/dtran44)
 
 Philip Adeniyi
-link here 
+[link here ](https://github.com/ocean-8)
 
 Joshua Jones 
 
@@ -89,11 +89,15 @@ https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
 Mozilla Developer Network (MDN) Web Docs. (n.d.). Using Third-Party APIs: 
 https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Third_party_APIs
 
-Google Maps Platform 
+Google Maps Platform <br>
 https://developers.google.com/maps/documentation/javascript/get-api-key
 
-MDN Web Docs 
+MDN Web Docs <br>
 https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
 
 
 ## Link to Depolyed Web App
+https://dtran44.github.io/NourishNow/ 
+
+## Link to Google Slide presentation
+https://docs.google.com/presentation/d/1uTZpTB0_IiFUpzSKmQ-Z3sjEKdMtRPDaQRCGHpAe8Mo/edit?pli=1#slide=id.g2624c6ca77d_0_365
