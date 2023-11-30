@@ -1,0 +1,67 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-family: 'Cormorant', serif;
+    color: #013220;
+}
+
+
+
+.button-container{
+    display: flex;
+    justify-content: center;
+   
+}
+
+.button {
+    display: flex;
+    justify-content: center; 
+    background-color: #353535;
+    color: white;
+    font-family:sans-serif;
+    border: none;
+    border-radius: 10px;
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+  
+  }
+  
+  .button:hover {
+    background-color:#2E8B57;
+    transition: 0.7s;
+  }
+
+.locationEnabled{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 700px;
+}
+
+#map {
+    height: 95%;
+    width: 80%;
+    left: 150px;
+    right: 200px;
+    margin-bottom: 40px;
+    border: 5px black;
+
+  }
+  
+
+  html{
+    height: 90%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    height: 96%;
+    margin: 0;
+    padding: 0;
+    background-image: url(./vecteezy_still-life-of-assorted-vegetables_1853269.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    }

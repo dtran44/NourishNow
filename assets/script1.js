@@ -24,8 +24,11 @@ displayItems(items);
 
 
 
-// Add click event listener to navigate from shopping list to location page 
 
+//Location button linked to separate html page
+locationBtn.addEventListener("click", function () {
+  window.location.href="location.html";
+});
       
   
 
