@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map location</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="./Location Assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>Find My Nearest Supermarket</h1>
+    </header>
+    <div id="map"></div>
+    <main>
+      <div class="locationEnabled"></div>
+    </main>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjtbiNVSdaY5q5gUKYYH0VqjDZcvs128Q&callback=initMap&libraries=places&v=weekly"
+    defer
+  ></script>
+    <script type="text/javascript" src="./Location Assets/script.js"></script>
+</body>
+    
+
+</html>

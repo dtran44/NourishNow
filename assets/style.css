@@ -284,7 +284,8 @@ img.meal-image {
 }
 
 #shoppingList ul li {
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
+  font-family:'Arial'; 
 }
 
 #list p {
