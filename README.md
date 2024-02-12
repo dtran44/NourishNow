@@ -56,39 +56,39 @@ https://fonts.google.com/specimen/Cormorant
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container
 
 ### Vecteezy Free Stock Photos
-(https://www.vecteezy.com/free-photos)
+https://www.vecteezy.com/free-photos
 
 ### The Meal DB. (n.d.). The Meal DB API Documentation: 
-(https://www.themealdb.com/api.php)
+https://www.themealdb.com/api.php
 
 ### Stack Overflow. (n.d.). Shopping list app using checkboxes to cross off items: 
-(https://stackoverflow.com/questions/20152414/shopping-list-app-using-checkboxes-to-cross-off-items)
+https://stackoverflow.com/questions/20152414/shopping-list-app-using-checkboxes-to-cross-off-items
 
 ### Dev.to. (n.d.). Build a simple shopping list app with JavaScript: 
-(https://dev.to/obere4u/build-a-simple-shopping-list-app-with-javascript-38ln)
+https://dev.to/obere4u/build-a-simple-shopping-list-app-with-javascript-38ln
 
 ### Code Boxx. (n.d.). Shopping List - Vanilla JavaScript: 
-(https://code-boxx.com/shopping-list-vanilla-javascript/)
+https://code-boxx.com/shopping-list-vanilla-javascript/
 
 ### JavaScript Tutorial. (n.d.). JavaScript Checkbox: 
-(https://www.javascripttutorial.net/javascript-dom/javascript-checkbox/)
+https://www.javascripttutorial.net/javascript-dom/javascript-checkbox/
 
 ### W3Schools. (n.d.). Node appendChild() Method: 
-(https://www.w3schools.com/jsref/met_node_appendchild.asp)
+https://www.w3schools.com/jsref/met_node_appendchild.asp
 
 ### W3Schools. (n.d.). How TO - Toggle Hide and Show: 
-(https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp)
+https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
 
 ### Mozilla Developer Network (MDN) Web Docs. (n.d.). Using Third-Party APIs: 
-(https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Third_party_APIs)
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Third_party_APIs
 
 ### Google Maps Platform
-(https://developers.google.com/maps/documentation/javascript/get-api-key)
-(https://developers.google.com/maps/documentation/javascript/examples/place-search#maps_place_search-javascript)
-(https://developers.google.com/maps/documentation/places/web-service/search-nearby#maps_http_places_nearbysearch-sh)
+https://developers.google.com/maps/documentation/javascript/get-api-key
+https://developers.google.com/maps/documentation/javascript/examples/place-search#maps_place_search-javascript
+https://developers.google.com/maps/documentation/places/web-service/search-nearby#maps_http_places_nearbysearch-sh
 
 ### MDN Web Docs
-(https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
 
 
 ## Link to Depolyed Web App
